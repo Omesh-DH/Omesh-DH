@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omesh Kumar | Skills & Work Portfolio</title>
+  <meta name="description" content="Skills showcase — Omesh Kumar. Web Design, Lead Generation, Coding, Management, AI Tools, Automation." />
+
+  <!-- ===== STACK ===== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <!-- ===== DESIGN TOKENS ===== -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal:    { DEFAULT: '#0f766e', dark: '#0b5b55', light: '#14b8a6', soft: 'rgba(15,118,110,0.08)' },
+            slate:   { page: '#f5f9fb', surface: '#ffffff', raised: '#eef5f7' },
+            ink:     { DEFAULT: '#18323f', muted: '#5f7782', line: '#d8e5ea' },
+            accent:  '#2563eb',
+          },
+          fontFamily: {
+            sans:    ['"DM Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+          },
+          boxShadow: {
+            card:  '0 16px 40px rgba(18,49,63,.08)',
+            lift:  '0 24px 56px rgba(18,49,63,.14)',
+          },
+          borderRadius: { xl2: '20px', xl3: '24px' },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg,#f8fcfd 0%,#f3f8fa 40%,#edf5f8 100%); }
+
+    /* Lightbox thumbnail hover */
+    .thumb-wrap { position: relative; overflow: hidden; border-radius: 14px; cursor: pointer; }
+    .thumb-wrap img { transition: transform .4s ease; }
+    .thumb-wrap:hover img { transform: scale(1.04); }
+    .thumb-overlay {
+      position: absolute; inset: 0;
+      background: rgba(15,118,110,0); transition: background .3s ease;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 14px;
+    }
+    .thumb-wrap:hover .thumb-overlay { background: rgba(15,118,110,0.18); }
+    .thumb-overlay svg { opacity: 0; transform: scale(.8); transition: .3s ease; }
+    .thumb-wrap:hover .thumb-overlay svg { opacity: 1; transform: scale(1); }
+
+    /* Placeholder image blocks — replace with real <img> tags */
+    .img-placeholder {
+      width: 100%; aspect-ratio: 16/10; border-radius: 14px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: .5rem; font-family: "DM Sans", sans-serif;
+      font-size: .82rem; font-weight: 500; letter-spacing: .04em;
+      border: 1.5px dashed #d8e5ea;
+      background: #eef5f7;
+      color: #5f7782;
+      user-select: none;
+    }
+    .img-placeholder span { font-size: 1.4rem; }
+  </style>
+</head>
+
+<body class="font-sans text-ink min-h-screen" x-data="lightbox()" @keydown.escape.window="close()">
+
+<!-- ===== NAVBAR ===== -->
+<header class="sticky top-0 z-40 bg-slate-page/90 backdrop-blur-md border-b border-ink-line/60">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between min-h-[68px] gap-4">
+    <a href="#top" class="font-sans font-bold tracking-tight text-[1.05rem]">
+      Omesh <span class="text-teal">Kumar</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex gap-7 text-[.92rem] text-ink-muted">
+      <a href="#top"            class="hover:text-teal transition-colors">Intro</a>
+      <a href="#web-design"     class="hover:text-teal transition-colors">Web Design</a>
+      <a href="#lead-gen"       class="hover:text-teal transition-colors">Lead Gen</a>
+      <a href="#coding"         class="hover:text-teal transition-colors">Coding</a>
+      <a href="#management"     class="hover:text-teal transition-colors">Management</a>
+      <a href="#ai-tools"       class="hover:text-teal transition-colors">AI Tools</a>
+      <a href="#automation"     class="hover:text-teal transition-colors">Automation</a>
+    </nav>
+
+    <a href="omesh_portfolio_cv_linkedin_updated.html"
+       class="text-[.88rem] font-semibold border border-ink-line bg-white text-ink hover:border-teal hover:text-teal rounded-full px-5 py-2 transition-all duration-200">
+      ← CV Portfolio
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO / INTRO ===== -->
+<section id="top" class="pt-16 pb-16 max-w-6xl mx-auto px-6">
+  <div class="grid md:grid-cols-[1fr_1.6fr] gap-10 items-center">
+
+    <!-- Photo card -->
+    <!-- TO ADD YOUR PHOTO: replace the <div class="photo-placeholder"> block below with:
+         <img src="your-photo.jpg" alt="Omesh Kumar" class="w-full h-full object-cover object-top rounded-[20px]">
+         inside the same <div class="...photo-frame..."> wrapper -->
+    <div class="relative">
+      <div class="rounded-[24px] bg-white border border-ink-line shadow-card p-3 max-w-[340px] mx-auto md:mx-0">
+        <!-- Photo frame -->
+        <div class="w-full aspect-[4/5] rounded-[18px] overflow-hidden bg-slate-raised border border-ink-line flex flex-col items-center justify-center gap-2 text-ink-muted text-[.82rem] font-medium" id="photo-frame">
+          <!-- REPLACE THIS DIV WITH YOUR PHOTO <img> TAG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-12 h-12 opacity-20 mb-1"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+          <span class="opacity-40 text-[.78rem]">Your photo here</span>
+        </div>
+        <!-- Card footer -->
+        <div class="mt-3 px-1 pb-1 flex items-center justify-between">
+          <div>
+            <p class="font-bold text-[.95rem] text-ink">Omesh Kumar</p>
+            <p class="text-ink-muted text-[.8rem]">Berlin, Germany</p>
+          </div>
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-teal-soft text-teal text-[.75rem] font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal inline-block"></span> Available
+          </span>
+        </div>
+      </div>
+      <!-- Decorative teal blob -->
+      <div class="absolute -z-10 -bottom-6 -left-6 w-40 h-40 rounded-full opacity-10" style="background:radial-gradient(circle, #0f766e, transparent 70%);"></div>
+    </div>
+
+    <!-- Text content -->
+    <div>
+      <p class="text-[.8rem] font-bold uppercase tracking-[.14em] text-accent mb-3">Skills Portfolio</p>
+      <h1 class="font-display text-4xl md:text-[3.4rem] leading-[1.1] text-ink mb-5">
+        Hi, I'm Omesh —<br>
+        <span class="text-teal">Pharmacist turned</span><br>
+        Digital Health Builder
+      </h1>
+      <p class="text-ink-muted text-[1.02rem] leading-relaxed mb-6 max-w-xl">
+        Based in Berlin. I combine a clinical pharmacy background (Pharm-D, 3+ years at Indus Hospital &amp; Tabba Heart Institute) with hands-on work in digital health, CRM automation, web development, and data analysis — currently studying M.Sc. Digital Health Management at MSB Berlin and building market validation at a healthtech SaaS startup.
+      </p>
+
+      <!-- Quick stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-7">
+        <div class="bg-white border border-ink-line rounded-xl px-4 py-3 shadow-card">
+          <p class="font-bold text-teal text-[1.1rem]">3+</p>
+          <p class="text-ink-muted text-[.8rem]">Years clinical pharmacy</p>
+        </div>
+        <div class="bg-white border border-ink-line rounded-xl px-4 py-3 shadow-card">
+          <p class="font-bold text-teal text-[1.1rem]">M.Sc.</p>
+          <p class="text-ink-muted text-[.8rem]">Digital Health Mgmt</p>
+        </div>
+        <div class="bg-white border border-ink-line rounded-xl px-4 py-3 shadow-card">
+          <p class="font-bold text-teal text-[1.1rem]">6</p>
+          <p class="text-ink-muted text-[.8rem]">Skill areas with evidence</p>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex gap-3 flex-wrap">
+        <a href="mailto:omeshtarani@gmail.com"
+           class="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-semibold rounded-full hover:bg-teal-dark transition-colors shadow-card text-[.9rem]">
+          <i data-lucide="mail" class="w-4 h-4"></i> Email me
+        </a>
+        <a href="https://www.linkedin.com/in/omesh-kumar-526121166/" target="_blank" rel="noreferrer"
+           class="inline-flex items-center gap-2 px-6 py-3 border border-ink-line bg-white text-ink font-semibold rounded-full hover:border-teal hover:text-teal transition-all text-[.9rem]">
+          <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+        </a>
+        <a href="#web-design"
+           class="inline-flex items-center gap-2 px-6 py-3 border border-ink-line bg-white text-ink font-semibold rounded-full hover:border-teal hover:text-teal transition-all text-[.9rem]">
+          View work <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Contact details -->
+      <div class="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <a href="mailto:omeshtarani@gmail.com"
+           class="group flex items-center gap-2.5 bg-white border border-ink-line rounded-xl px-4 py-3 hover:border-teal transition-all shadow-card">
+          <span class="w-8 h-8 rounded-full bg-teal-soft flex items-center justify-center flex-shrink-0 group-hover:bg-teal group-hover:text-white transition-colors">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-teal group-hover:text-white"></i>
+          </span>
+          <div class="min-w-0">
+            <p class="text-[.7rem] text-ink-muted font-medium uppercase tracking-wider">Email</p>
+            <p class="text-[.78rem] font-semibold text-ink truncate">omeshtarani@gmail.com</p>
+          </div>
+        </a>
+
+        <a href="tel:+4915207174959"
+           class="group flex items-center gap-2.5 bg-white border border-ink-line rounded-xl px-4 py-3 hover:border-teal transition-all shadow-card">
+          <span class="w-8 h-8 rounded-full bg-teal-soft flex items-center justify-center flex-shrink-0 group-hover:bg-teal transition-colors">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-teal group-hover:text-white"></i>
+          </span>
+          <div class="min-w-0">
+            <p class="text-[.7rem] text-ink-muted font-medium uppercase tracking-wider">Phone</p>
+            <p class="text-[.78rem] font-semibold text-ink truncate">+49 152 0717 4959</p>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/omesh-kumar-526121166/" target="_blank" rel="noreferrer"
+           class="group flex items-center gap-2.5 bg-white border border-ink-line rounded-xl px-4 py-3 hover:border-teal transition-all shadow-card">
+          <span class="w-8 h-8 rounded-full bg-teal-soft flex items-center justify-center flex-shrink-0 group-hover:bg-teal transition-colors">
+            <i data-lucide="linkedin" class="w-3.5 h-3.5 text-teal group-hover:text-white"></i>
+          </span>
+          <div class="min-w-0">
+            <p class="text-[.7rem] text-ink-muted font-medium uppercase tracking-wider">LinkedIn</p>
+            <p class="text-[.78rem] font-semibold text-ink truncate">omesh-kumar</p>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-2.5 bg-white border border-ink-line rounded-xl px-4 py-3 shadow-card">
+          <span class="w-8 h-8 rounded-full bg-teal-soft flex items-center justify-center flex-shrink-0">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-teal"></i>
+          </span>
+          <div class="min-w-0">
+            <p class="text-[.7rem] text-ink-muted font-medium uppercase tracking-wider">Location</p>
+            <p class="text-[.78rem] font-semibold text-ink truncate">Berlin, Germany</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== LANGUAGE SKILLS ===== -->
+<section class="pb-14 max-w-6xl mx-auto px-6">
+  <div class="bg-white border border-ink-line rounded-[24px] shadow-card px-8 py-7">
+    <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+
+      <!-- Label -->
+      <div class="flex-shrink-0">
+        <p class="text-[.78rem] font-bold uppercase tracking-[.13em] text-accent mb-1">Languages</p>
+        <p class="font-display text-[1.4rem] leading-tight text-ink">Communication<br class="hidden md:block"> skills</p>
+      </div>
+
+      <div class="w-px bg-ink-line hidden md:block self-stretch"></div>
+
+      <!-- Languages -->
+      <div class="flex-1 grid sm:grid-cols-3 gap-5">
+
+        <!-- English -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🇬🇧</span>
+              <span class="font-semibold text-[.95rem] text-ink">English</span>
+            </div>
+            <span class="text-[.75rem] font-bold px-2 py-0.5 rounded-full bg-teal-soft text-teal">C1 / C2</span>
+          </div>
+          <div class="h-2 bg-slate-raised rounded-full overflow-hidden">
+            <div class="h-full bg-teal rounded-full" style="width:96%"></div>
+          </div>
+          <p class="text-ink-muted text-[.78rem] mt-1.5">Professional working language</p>
+        </div>
+
+        <!-- German -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🇩🇪</span>
+              <span class="font-semibold text-[.95rem] text-ink">German</span>
+            </div>
+            <span class="text-[.75rem] font-bold px-2 py-0.5 rounded-full bg-slate-raised border border-ink-line text-ink-muted">B1 / B2</span>
+          </div>
+          <div class="h-2 bg-slate-raised rounded-full overflow-hidden">
+            <div class="h-full bg-teal rounded-full" style="width:58%"></div>
+          </div>
+          <p class="text-ink-muted text-[.78rem] mt-1.5">Actively improving — Berlin daily use</p>
+        </div>
+
+        <!-- Urdu -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🇵🇰</span>
+              <span class="font-semibold text-[.95rem] text-ink">Urdu</span>
+            </div>
+            <span class="text-[.75rem] font-bold px-2 py-0.5 rounded-full bg-teal-soft text-teal">Native</span>
+          </div>
+          <div class="h-2 bg-slate-raised rounded-full overflow-hidden">
+            <div class="h-full bg-teal rounded-full" style="width:100%"></div>
+          </div>
+          <p class="text-ink-muted text-[.78rem] mt-1.5">Mother tongue</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== SKILLS SECTIONS ===== -->
+
+<!-- ─── 1. WEB DESIGN ─── -->
+<section id="web-design" class="py-14 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
+
+    <!-- Left: label + description -->
+    <div class="md:sticky md:top-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-soft text-teal font-bold text-[.84rem] mb-4">
+        <i data-lucide="layout-template" class="w-4 h-4"></i> Web Design
+      </div>
+      <h2 class="font-display text-[2.1rem] leading-tight mb-4">Production-ready websites built from scratch</h2>
+      <p class="text-ink-muted text-[.95rem] leading-relaxed mb-5">
+        Modular HTML/CSS multi-page sites with video heroes, booking integrations, tiered programme cards, DSGVO-compliant legal pages, and mobile-responsive layouts — no templates.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">HTML / CSS</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Figma → Code</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">WordPress</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">GoHighLevel</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Doctolib embed</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">DSGVO / Impressum</span>
+      </div>
+    </div>
+
+    <!-- Right: gallery -->
+    <!-- HOW TO ADD PHOTOS: replace each <div class="img-placeholder ..."> with <img src="your-file.jpg" alt="..." class="w-full rounded-[14px] object-cover"> -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="thumb-wrap" data-img="" data-caption="URO Friedenau — Homepage hero with video background and Doctolib booking" @click="open($el)">
+        <div class="img-placeholder"><span>🖥️</span>URO Friedenau<br>Homepage hero</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+
+      <div class="thumb-wrap" data-img="" data-caption="URO Friedenau — Longevity Programme page with tiered cards and milestone timeline" @click="open($el)">
+        <div class="img-placeholder"><span>📋</span>URO Friedenau<br>Longevity Programme page</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+
+      <div class="thumb-wrap" data-img="" data-caption="PUMA SaaS — German B2B landing page on GoHighLevel" @click="open($el)">
+        <div class="img-placeholder"><span>🚀</span>PUMA SaaS<br>B2B Landing Page</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+
+      <div class="thumb-wrap" data-img="" data-caption="Responsive mobile view — URO Friedenau site" @click="open($el)">
+        <div class="img-placeholder"><span>📱</span>Mobile responsive<br>view</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── 2. LEAD GENERATION ─── -->
+<section id="lead-gen" class="py-14 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
+    <div class="md:sticky md:top-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-soft text-teal font-bold text-[.84rem] mb-4">
+        <i data-lucide="target" class="w-4 h-4"></i> Lead Generation
+      </div>
+      <h2 class="font-display text-[2.1rem] leading-tight mb-4">B2B outreach and CRM pipeline management</h2>
+      <p class="text-ink-muted text-[.95rem] leading-relaxed mb-5">
+        Targeted email campaigns to German urologists, GoHighLevel CRM form flows, SEO keyword strategy, and lead-tracking dashboards — all in German, C1-level copy, zero filler.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">GoHighLevel CRM</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">HubSpot</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Email Marketing (DE)</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">SEO</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Pipeline Tracking</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="thumb-wrap" data-img="" data-caption="GoHighLevel — CRM pipeline and lead tracking dashboard" @click="open($el)">
+        <div class="img-placeholder"><span>📊</span>GoHighLevel<br>CRM pipeline</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="PUMA email campaign — Arztsache subject line, German B2B copy" @click="open($el)">
+        <div class="img-placeholder"><span>✉️</span>PUMA email campaign<br>"Arztsache –" series</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap col-span-2" data-img="" data-caption="SEO keyword framework — LDT + KI + automatisch + DSGVO niche targeting" @click="open($el)">
+        <div class="img-placeholder" style="aspect-ratio:21/8;"><span>🔍</span>SEO keyword framework — LDT + KI + DSGVO niche</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── 3. CODING ─── -->
+<section id="coding" class="py-14 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
+    <div class="md:sticky md:top-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-soft text-teal font-bold text-[.84rem] mb-4">
+        <i data-lucide="code-2" class="w-4 h-4"></i> Coding
+      </div>
+      <h2 class="font-display text-[2.1rem] leading-tight mb-4">Front-end, data scripts & game dev</h2>
+      <p class="text-ink-muted text-[.95rem] leading-relaxed mb-5">
+        From interactive HTML data reports with Chart.js to Python analytics scripts, R visualisations, and a real-time multiplayer Android game built with Phaser 3, Socket.io, and Replit — deployed via WebIntoApp.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">HTML / CSS / JS</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Python (pandas, numpy)</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">R (ggplot2)</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Phaser 3</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Socket.io</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Chart.js</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Excel / VBA</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="thumb-wrap" data-img="" data-caption="Interactive HTML data report — HR survey analysis with Chart.js visualisations" @click="open($el)">
+        <div class="img-placeholder"><span>📈</span>HTML data report<br>Chart.js dashboard</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Mini Militia Classic DA2 MMC — Android game built with Phaser 3 + Socket.io" @click="open($el)">
+        <div class="img-placeholder"><span>🎮</span>Mini Militia Classic<br>Android game (Phaser 3)</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Python / R data analysis — pandas, ggplot2, statistical plots" @click="open($el)">
+        <div class="img-placeholder"><span>🐍</span>Python / R<br>analysis scripts</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Excel / VBA automation — macros, reporting templates" @click="open($el)">
+        <div class="img-placeholder"><span>📊</span>Excel / VBA<br>automation macros</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── 4. MANAGEMENT ─── -->
+<section id="management" class="py-14 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
+    <div class="md:sticky md:top-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-soft text-teal font-bold text-[.84rem] mb-4">
+        <i data-lucide="users" class="w-4 h-4"></i> Management
+      </div>
+      <h2 class="font-display text-[2.1rem] leading-tight mb-4">Leading teams, journals & international networks</h2>
+      <p class="text-ink-muted text-[.95rem] leading-relaxed mb-5">
+        Journal club leadership at IVPN, webinar committee chairing, community pharmacy ambassador, and concurrent project coordination across the PUMA startup, MSB Library, and clinical pharmacy roles.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Journal Club Leader — IVPN</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Webinar Committee Chair</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Cross-functional coordination</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Clinical team lead (Tabba Heart)</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="thumb-wrap" data-img="" data-caption="IVPN Journal Club — session agenda or certificate of leadership" @click="open($el)">
+        <div class="img-placeholder"><span>📚</span>IVPN Journal Club<br>leadership</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Tabba Heart Institute — clinical pharmacy team coordination" @click="open($el)">
+        <div class="img-placeholder"><span>🏥</span>Tabba Heart Institute<br>clinical pharmacy</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap col-span-2" data-img="" data-caption="Concurrent role management — MSB Library · PUMA · MSc studies" @click="open($el)">
+        <div class="img-placeholder" style="aspect-ratio:21/8;"><span>⚙️</span>Concurrent role management — MSB Library · PUMA · MSc studies</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── 5. AI TOOLS ─── -->
+<section id="ai-tools" class="py-14 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
+    <div class="md:sticky md:top-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-soft text-teal font-bold text-[.84rem] mb-4">
+        <i data-lucide="bot" class="w-4 h-4"></i> AI Tools
+      </div>
+      <h2 class="font-display text-[2.1rem] leading-tight mb-4">Building with and on top of AI</h2>
+      <p class="text-ink-muted text-[.95rem] leading-relaxed mb-5">
+        Custom Claude skills (Figma pixel fixer, data analyst skill), AI-powered content workflows, prompt engineering for German B2B email copy, and academic research support — with full AI use disclosure where required.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Claude (Anthropic)</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Custom skill building</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Prompt engineering</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">AI content workflows</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Figma pixel fixer skill</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="thumb-wrap" data-img="" data-caption="Figma Pixel Fixer — custom Claude skill for correcting exported CSS/React/Flutter pixel values" @click="open($el)">
+        <div class="img-placeholder"><span>🎨</span>Figma Pixel Fixer<br>custom Claude skill</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="AI-powered data analyst skill — interactive HTML reports generated with Claude" @click="open($el)">
+        <div class="img-placeholder"><span>🤖</span>AI data analyst<br>skill output</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="AI-assisted German email copy — prompt workflow for PUMA Arztsache campaigns" @click="open($el)">
+        <div class="img-placeholder"><span>✍️</span>AI email copy<br>prompt workflow</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Academic research AI workflow — paper review, APA7 citations, AI disclosure formatting" @click="open($el)">
+        <div class="img-placeholder"><span>📝</span>Academic research<br>AI workflow</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── 6. AUTOMATION ─── -->
+<section id="automation" class="py-14 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
+    <div class="md:sticky md:top-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-soft text-teal font-bold text-[.84rem] mb-4">
+        <i data-lucide="zap" class="w-4 h-4"></i> Automation
+      </div>
+      <h2 class="font-display text-[2.1rem] leading-tight mb-4">CRM flows, email sequences & reporting pipelines</h2>
+      <p class="text-ink-muted text-[.95rem] leading-relaxed mb-5">
+        GoHighLevel automation workflows for lead nurturing, scheduled email sequences targeting German urologists, CRM form-to-pipeline automation, and Excel/VBA macros for clinical and business reporting.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">GoHighLevel workflows</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Email sequences (DE)</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">CRM form automation</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Excel / VBA macros</span>
+        <span class="px-3 py-1 rounded-full bg-slate-raised border border-ink-line text-[.82rem]">Calendly integration</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="thumb-wrap col-span-2" data-img="" data-caption="GoHighLevel automation workflow — lead nurture sequence for PUMA SaaS" @click="open($el)">
+        <div class="img-placeholder" style="aspect-ratio:21/8;"><span>⚡</span>GoHighLevel — lead nurture automation workflow</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Email sequence scheduler — campaign timing and open-rate tracking" @click="open($el)">
+        <div class="img-placeholder"><span>📅</span>Email sequence<br>scheduler</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+      <div class="thumb-wrap" data-img="" data-caption="Excel VBA macro — automated reporting pipeline" @click="open($el)">
+        <div class="img-placeholder"><span>🔧</span>Excel VBA macro<br>reporting pipeline</div>
+        <div class="thumb-overlay"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803M15.803 15.803L21 21"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CONTACT STRIP ===== -->
+<section class="py-16 max-w-6xl mx-auto px-6 border-t border-ink-line/40">
+  <div class="bg-white rounded-xl3 border border-ink-line shadow-card p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <p class="text-[.8rem] font-bold uppercase tracking-[.12em] text-accent mb-2">Open to opportunities</p>
+      <h2 class="font-display text-3xl mb-2">Let's work together</h2>
+      <p class="text-ink-muted">Werkstudent, internship, digital health, CRM & marketing ops roles in Berlin.</p>
+    </div>
+    <div class="flex gap-3 flex-shrink-0 flex-wrap">
+      <a href="mailto:omeshtarani@gmail.com"
+         class="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-semibold rounded-full hover:bg-teal-dark transition-colors shadow-card">
+        <i data-lucide="mail" class="w-4 h-4"></i> Email me
+      </a>
+      <a href="https://www.linkedin.com/in/omesh-kumar-526121166/" target="_blank" rel="noreferrer"
+         class="inline-flex items-center gap-2 px-6 py-3 border border-ink-line bg-white text-ink font-semibold rounded-full hover:border-teal hover:text-teal transition-all">
+        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="pb-10 max-w-6xl mx-auto px-6 text-ink-muted text-[.88rem] text-center">
+  © 2026 Omesh Kumar · Skills Portfolio · Berlin
+</footer>
+
+
+<!-- ===== LIGHTBOX MODAL ===== -->
+<div x-show="isOpen" x-cloak x-transition.opacity
+     class="fixed inset-0 z-50 bg-ink/80 backdrop-blur-sm flex items-center justify-center p-4"
+     @click.self="close()">
+
+  <div class="relative bg-white rounded-xl3 shadow-lift max-w-4xl w-full overflow-hidden"
+       @click.stop>
+
+    <!-- Close button -->
+    <button @click="close()"
+            class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-ink/10 hover:bg-ink/20 flex items-center justify-center transition-colors">
+      <i data-lucide="x" class="w-4 h-4 text-ink"></i>
+    </button>
+
+    <!-- Image display -->
+    <div class="bg-slate-raised flex items-center justify-center min-h-[300px] p-4">
+      <template x-if="currentSrc !== ''">
+        <img :src="currentSrc" :alt="currentCaption" class="max-h-[65vh] w-auto rounded-lg object-contain shadow-card">
+      </template>
+      <template x-if="currentSrc === ''">
+        <div class="flex flex-col items-center gap-3 py-16 text-ink-muted text-center">
+          <i data-lucide="image" class="w-12 h-12 opacity-30"></i>
+          <p class="font-semibold">Photo coming soon</p>
+          <p class="text-[.85rem] max-w-xs opacity-70">Set <code>data-img="your-photo.jpg"</code> on the thumb-wrap and place the image in the same folder.</p>
+        </div>
+      </template>
+    </div>
+
+    <!-- Caption -->
+    <div class="px-6 py-4 border-t border-ink-line">
+      <p class="text-[.9rem] text-ink-muted" x-text="currentCaption"></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== LIGHTBOX CONTROLLER ===== -->
+<script>
+  function lightbox() {
+    return {
+      isOpen: false,
+      currentSrc: '',
+      currentCaption: '',
+      /**
+       * Pass the .thumb-wrap element ($el in Alpine).
+       * Reads data-img (empty string = placeholder) and data-caption.
+       * If data-img is a real path, shows the image; otherwise shows the "coming soon" state.
+       */
+      open(wrapEl) {
+        this.currentSrc     = wrapEl.dataset.img   || '';
+        this.currentCaption = wrapEl.dataset.caption || '';
+        this.isOpen = true;
+        document.body.style.overflow = 'hidden';
+      },
+      close() {
+        this.isOpen = false;
+        document.body.style.overflow = '';
+      }
+    }
+  }
+</script>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
